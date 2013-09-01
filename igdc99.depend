@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1378042430 source:c:\sources\igdc99\main.cpp
+	"engine/CApplication.h"
+
+1378043599 source:c:\sources\igdc99\engine\capplication.cpp
+	"CApplication.h"
+	"CLog.h"
+	<stdio.h>
+
+1378042399 c:\sources\igdc99\engine\capplication.h
+	<SDL2/SDL.h>
+
+1378041386 c:\sources\igdc99\engine\clog.h
+
+1378041864 source:c:\sources\igdc99\engine\clog.cpp
+	"CLog.h"
+	<iostream>
+	<stdio.h>
+
+1378043950 source:c:\sources\igdc99\engine\cdisplayobject.cpp
+	"CDisplayObject.h"
+
+1378043950 c:\sources\igdc99\engine\cdisplayobject.h
+
