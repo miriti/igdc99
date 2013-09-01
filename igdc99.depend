@@ -1,14 +1,17 @@
 # depslib dependency file v1.0
-1378042430 source:c:\sources\igdc99\main.cpp
+1378077972 source:c:\sources\igdc99\main.cpp
+	<cstddef>
 	"engine/CApplication.h"
+	"game/CGameRoot.h"
 
-1378043599 source:c:\sources\igdc99\engine\capplication.cpp
+1378078265 source:c:\sources\igdc99\engine\capplication.cpp
 	"CApplication.h"
 	"CLog.h"
-	<stdio.h>
+	<iostream>
 
-1378042399 c:\sources\igdc99\engine\capplication.h
-	<SDL2/SDL.h>
+1378078057 c:\sources\igdc99\engine\capplication.h
+	<SDL.h>
+	"CDisplayObject.h"
 
 1378041386 c:\sources\igdc99\engine\clog.h
 
@@ -17,8 +20,46 @@
 	<iostream>
 	<stdio.h>
 
-1378043950 source:c:\sources\igdc99\engine\cdisplayobject.cpp
+1378075270 source:c:\sources\igdc99\engine\cdisplayobject.cpp
+	<cstddef>
 	"CDisplayObject.h"
+	<math.h>
+	<iostream>
 
-1378043950 c:\sources\igdc99\engine\cdisplayobject.h
+1378076407 c:\sources\igdc99\engine\cdisplayobject.h
+	<vector>
+	<SDL_rect.h>
+
+1378077873 source:c:\sources\igdc99\engine\cimage.cpp
+	"CImage.h"
+	"CApplication.h"
+	"CImageLoader.h"
+	<iostream>
+
+1378077395 c:\sources\igdc99\engine\cimage.h
+	"CDisplayObject.h"
+	<SDL.h>
+
+1378068809 source:c:\sources\igdc99\engine\cimageloader.cpp
+	"CImageLoader.h"
+	"CApplication.h"
+	<iostream>
+	<stdlib.h>
+
+1378068412 c:\sources\igdc99\engine\cimageloader.h
+	<SDL.h>
+	<SDL_render.h>
+	<SDL_image.h>
+	<map>
+
+1378078171 source:c:\sources\igdc99\game\cgameroot.cpp
+	"CGameRoot.h"
+	"../engine/CApplication.h"
+	"../engine/CImage.h"
+	"../engine/CImageLoader.h"
+	<iostream>
+
+1378076367 c:\sources\igdc99\game\cgameroot.h
+	"../engine/CDisplayObject.h"
+	"../engine/CImage.h"
 

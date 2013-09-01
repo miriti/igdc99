@@ -1,10 +1,10 @@
 #ifndef CAPPLICATION_H
 #define CAPPLICATION_H
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "CDisplayObject.h"
 
-class CApplication
+class CApplication: public CDisplayObject
 {
     public:
         CApplication(char * title, int screenWidth, int screenHeight);
@@ -12,12 +12,15 @@ class CApplication
         void Run();
         void setCoreDisplay(CDisplayObject * displayObject);
         int Terminate();
+        SDL_Window * window;
+        SDL_Renderer * renderer;
+        static CApplication * instance;
+        int displayWidth;
+        int displayHeight;
     protected:
         bool running;
     private:
         CDisplayObject * coreDisplayObject;
-        SDL_Window * window;
-        SDL_Renderer * renderer;
 };
 
 #endif // CAPPLICATION_H

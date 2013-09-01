@@ -1,7 +1,12 @@
+#include <cstddef>
 #include "engine/CApplication.h"
+#include "game/CGameRoot.h"
 
 int main(int argc, char** argv){
-    CApplication * app = new CApplication("IGDC #99 by Michael KEFIR Miriti", 1024, 576);
+    CApplication * app = new CApplication("IGDC #99", 640, 480);
+    CGameRoot * gameRoot = new CGameRoot();
+
+    app->setCoreDisplay(gameRoot);
     app->Run();
     return app->Terminate();
 }

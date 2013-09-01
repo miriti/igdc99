@@ -1,18 +1,18 @@
 #ifndef CGAMEROOT_H
 #define CGAMEROOT_H
 
-#include <CDisplayObject.h>
-
+#include "../engine/CDisplayObject.h"
+#include "../engine/CImage.h"
 
 class CGameRoot : public CDisplayObject
 {
     public:
-        /** Default constructor */
         CGameRoot();
-        /** Default destructor */
         virtual ~CGameRoot();
     protected:
+        void update(unsigned int deltaTime);
     private:
+        CImage * image;
 };
 
 #endif // CGAMEROOT_H

@@ -1,7 +1,11 @@
 #include "CApplication.h"
 #include "CLog.h"
 
-#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+CApplication * CApplication::instance = NULL;
 
 /**
  * Constructor
@@ -14,13 +18,22 @@ CApplication::CApplication(char * title, int screenWidth, int screenHeight)
 
     if(window == NULL)
     {
-        // Error
         this->Terminate();
     }
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
 
-    running=true;
+    if(renderer != NULL)
+    {
+        this->displayWidth = screenWidth;
+        this->displayHeight = screenHeight;
+
+        SDL_SetRenderDrawColor(renderer, 0x64, 0x95, 0xed, 0xff);
+
+        running = true;
+    }
+
+    CApplication::instance = this;
 }
 
 /**
@@ -45,8 +58,14 @@ int CApplication::Terminate()
  */
 void CApplication::Run()
 {
+    unsigned int lastTime = SDL_GetTicks();
+
     while(running)
     {
+        unsigned int currentTime = SDL_GetTicks();
+        unsigned int deltaTime = currentTime - lastTime;
+        lastTime = currentTime;
+
         SDL_Event event;
         SDL_PollEvent(&event);
 
@@ -61,7 +80,7 @@ void CApplication::Run()
 
         if(coreDisplayObject != NULL)
         {
-            coreDisplayObject->update(16);
+            coreDisplayObject->update(deltaTime);
             coreDisplayObject->render();
         }
 
@@ -72,5 +91,5 @@ void CApplication::Run()
 void CApplication::setCoreDisplay(CDisplayObject* displayObject)
 {
     coreDisplayObject = displayObject;
+    addChild(coreDisplayObject);
 }
-
