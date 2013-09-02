@@ -1,5 +1,4 @@
 #include "CImage.h"
-#include "CApplication.h"
 #include "CImageLoader.h"
 
 #include <iostream>
@@ -8,12 +7,15 @@ using namespace std;
 
 CImage::CImage(SDL_Surface* imageSurface)
 {
-    surface = imageSurface;
-    texture = CImageLoader::getTextureFromSurface(imageSurface);
-    w = imageSurface->clip_rect.w;
-    h = imageSurface->clip_rect.h;
-    x = y = 0;
+    fromSurfcae(imageSurface);
 }
+
+CImage::CImage(char* filePath)
+{
+    SDL_Surface * newSurface = CImageLoader::getImage(filePath);
+    fromSurfcae(newSurface);
+}
+
 
 CImage::~CImage()
 {
@@ -23,10 +25,10 @@ CImage::~CImage()
     }
 }
 
-void CImage::render()
+void CImage::render(SDL_Renderer * renderer)
 {
     SDL_RendererFlip flip = SDL_FLIP_NONE;
-    SDL_RenderCopyEx(CApplication::instance->renderer, this->texture, NULL, &rect, this->rotation, NULL, flip);
+    SDL_RenderCopyEx(renderer, this->texture, NULL, &rect, this->rotation, NULL, flip);
 }
 
 SDL_Surface* CImage::getSurface()
@@ -38,3 +40,13 @@ SDL_Texture* CImage::getTexture()
 {
     return texture;
 }
+
+void CImage::fromSurfcae(SDL_Surface* imageSurface)
+{
+    surface = imageSurface;
+    texture = CImageLoader::getTextureFromSurface(imageSurface);
+    w = imageSurface->clip_rect.w;
+    h = imageSurface->clip_rect.h;
+    x = y = 0;
+}
+

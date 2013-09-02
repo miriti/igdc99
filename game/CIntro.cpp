@@ -4,6 +4,7 @@
 #include "../engine/CApplication.h"
 
 #include "CMainMenu.h"
+#include "CGameMain.h"
 #include "CGameRoot.h"
 
 CIntro::CIntro()
@@ -22,10 +23,10 @@ CIntro::~CIntro()
 
 void CIntro::update(unsigned int deltaTime)
 {
-    if(timePassed >= 3000)
+    if(timePassed >= 300)
     {
-        CMainMenu * mainMenu = new CMainMenu();
-        CGameRoot::instance->setState(mainMenu);
+        CGameMain * gameMain = new CGameMain();
+        CGameRoot::instance->setState(gameMain);
     }
     else
     {

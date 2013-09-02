@@ -96,7 +96,7 @@ void CApplication::Run()
         if(coreDisplayObject != NULL)
         {
             coreDisplayObject->update(deltaTime);
-            coreDisplayObject->render();
+            coreDisplayObject->render(renderer);
         }
 
         SDL_RenderPresent(renderer);

@@ -2,6 +2,7 @@
 #define CDISPLAYOBJECT_H
 
 #include <vector>
+#include <SDL_render.h>
 #include <SDL_rect.h>
 #include <SDL_keyboard.h>
 
@@ -15,7 +16,7 @@ class CDisplayObject
         void setParent(CDisplayObject * newParent);
         virtual void onKeyDown(SDL_Keycode keyCode);
         virtual void onKeyUp(SDL_Keycode keyCode);
-        virtual void render();
+        virtual void render(SDL_Renderer * renderer);
         virtual void update(unsigned int deltaTime);
         float x;
         float y;

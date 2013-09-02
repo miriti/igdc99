@@ -40,11 +40,11 @@ void CDisplayObject::setParent(CDisplayObject* newParent)
 /**
  * Render
  */
-void CDisplayObject::render()
+void CDisplayObject::render(SDL_Renderer * renderer)
 {
     for(unsigned int i=0; i<children.size(); i++)
     {
-        children[i]->render();
+        children[i]->render(renderer);
     }
 }
 

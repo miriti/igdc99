@@ -4,7 +4,7 @@
 	"engine/CApplication.h"
 	"game/CGameRoot.h"
 
-1378120983 source:c:\sources\igdc99\engine\capplication.cpp
+1378162072 source:c:\sources\igdc99\engine\capplication.cpp
 	"CApplication.h"
 	"CLog.h"
 	<iostream>
@@ -21,24 +21,24 @@
 	<iostream>
 	<stdio.h>
 
-1378128822 source:c:\sources\igdc99\engine\cdisplayobject.cpp
+1378161985 source:c:\sources\igdc99\engine\cdisplayobject.cpp
 	<cstddef>
 	"CDisplayObject.h"
 	<math.h>
 	<iostream>
 
-1378120791 c:\sources\igdc99\engine\cdisplayobject.h
+1378162087 c:\sources\igdc99\engine\cdisplayobject.h
 	<vector>
+	<SDL_render.h>
 	<SDL_rect.h>
 	<SDL_keyboard.h>
 
-1378123652 source:c:\sources\igdc99\engine\cimage.cpp
+1378162239 source:c:\sources\igdc99\engine\cimage.cpp
 	"CImage.h"
-	"CApplication.h"
 	"CImageLoader.h"
 	<iostream>
 
-1378123628 c:\sources\igdc99\engine\cimage.h
+1378162021 c:\sources\igdc99\engine\cimage.h
 	"CDisplayObject.h"
 	<SDL.h>
 
@@ -91,11 +91,45 @@
 1378129695 c:\sources\igdc99\game\cintro.h
 	"../engine/CDisplayObject.h"
 
-1378129958 source:c:\sources\igdc99\game\cintro.cpp
+1378159267 source:c:\sources\igdc99\game\cintro.cpp
 	"CIntro.h"
 	"../engine/CImage.h"
 	"../engine/CImageLoader.h"
 	"../engine/CApplication.h"
 	"CMainMenu.h"
+	"CGameMain.h"
 	"CGameRoot.h"
+
+1378160135 source:c:\sources\igdc99\game\cgamebg.cpp
+	"CGameBg.h"
+	"../engine/CImageLoader.h"
+	<math.h>
+	<iostream>
+
+1378158842 c:\sources\igdc99\game\cgamebg.h
+	"../engine/CDisplayObject.h"
+	"../engine/CImage.h"
+
+1378162202 c:\sources\igdc99\game\cgamemain.h
+	"../engine/CDisplayObject.h"
+	"CGameBg.h"
+	"CFaith.h"
+
+1378163630 source:c:\sources\igdc99\game\cgamemain.cpp
+	"CGameMain.h"
+	"../engine/CApplication.h"
+
+1378164024 source:c:\sources\igdc99\engine\cmovieclip.cpp
+	"CMovieClip.h"
+	"CImageLoader.h"
+
+1378163975 c:\sources\igdc99\engine\cmovieclip.h
+	"CDisplayObject.h"
+
+1378164173 source:c:\sources\igdc99\game\cfaith.cpp
+	"CFaith.h"
+	"../engine/CApplication.h"
+
+1378164186 c:\sources\igdc99\game\cfaith.h
+	"../engine/CMovieClip.h"
 
