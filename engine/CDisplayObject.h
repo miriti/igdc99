@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <SDL_rect.h>
-
+#include <SDL_keyboard.h>
 
 class CDisplayObject
 {
@@ -13,6 +13,8 @@ class CDisplayObject
         void addChild(CDisplayObject * child);
         void removeChild(CDisplayObject * child);
         void setParent(CDisplayObject * newParent);
+        virtual void onKeyDown(SDL_Keycode keyCode);
+        virtual void onKeyUp(SDL_Keycode keyCode);
         virtual void render();
         virtual void update(unsigned int deltaTime);
         float x;

@@ -9,10 +9,10 @@ class CGameRoot : public CDisplayObject
     public:
         CGameRoot();
         virtual ~CGameRoot();
-    protected:
-        void update(unsigned int deltaTime);
+        static CGameRoot * instance;
+        void setState(CDisplayObject * newState);
     private:
-        CImage * image;
+        CDisplayObject * currentState;
 };
 
 #endif // CGAMEROOT_H

@@ -40,6 +40,8 @@
 		<Unit filename="engine/CImage.h" />
 		<Unit filename="engine/CImageLoader.cpp" />
 		<Unit filename="engine/CImageLoader.h" />
+		<Unit filename="engine/CInput.cpp" />
+		<Unit filename="engine/CInput.h" />
 		<Unit filename="engine/CLog.cpp" />
 		<Unit filename="engine/CLog.h" />
 		<Unit filename="game/CGameRoot.cpp" />

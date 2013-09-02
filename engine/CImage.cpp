@@ -28,3 +28,13 @@ void CImage::render()
     SDL_RendererFlip flip = SDL_FLIP_NONE;
     SDL_RenderCopyEx(CApplication::instance->renderer, this->texture, NULL, &rect, this->rotation, NULL, flip);
 }
+
+SDL_Surface* CImage::getSurface()
+{
+    return surface;
+}
+
+SDL_Texture* CImage::getTexture()
+{
+    return texture;
+}

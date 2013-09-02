@@ -11,6 +11,8 @@ class CImage : public CDisplayObject
         CImage(SDL_Surface* imageSurface);
         virtual ~CImage();
         void render();
+        SDL_Surface* getSurface();
+        SDL_Texture* getTexture();
         bool flipHorizontal;
         bool flipVertical;
     protected:

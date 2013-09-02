@@ -3,11 +3,12 @@
 
 #include <SDL.h>
 #include "CDisplayObject.h"
+#include "CInput.h"
 
 class CApplication: public CDisplayObject
 {
     public:
-        CApplication(char * title, int screenWidth, int screenHeight);
+        CApplication(char * title, int screenWidth, int screenHeight, int sceneWidth=-1, int sceneHeight = -1);
         virtual ~CApplication();
         void Run();
         void setCoreDisplay(CDisplayObject * displayObject);
@@ -17,6 +18,7 @@ class CApplication: public CDisplayObject
         static CApplication * instance;
         int displayWidth;
         int displayHeight;
+        CInput input;
     protected:
         bool running;
     private:

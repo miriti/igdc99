@@ -1,17 +1,18 @@
 # depslib dependency file v1.0
-1378077972 source:c:\sources\igdc99\main.cpp
+1378120956 source:c:\sources\igdc99\main.cpp
 	<cstddef>
 	"engine/CApplication.h"
 	"game/CGameRoot.h"
 
-1378078265 source:c:\sources\igdc99\engine\capplication.cpp
+1378120983 source:c:\sources\igdc99\engine\capplication.cpp
 	"CApplication.h"
 	"CLog.h"
 	<iostream>
 
-1378078057 c:\sources\igdc99\engine\capplication.h
+1378120747 c:\sources\igdc99\engine\capplication.h
 	<SDL.h>
 	"CDisplayObject.h"
+	"CInput.h"
 
 1378041386 c:\sources\igdc99\engine\clog.h
 
@@ -20,23 +21,24 @@
 	<iostream>
 	<stdio.h>
 
-1378075270 source:c:\sources\igdc99\engine\cdisplayobject.cpp
+1378128822 source:c:\sources\igdc99\engine\cdisplayobject.cpp
 	<cstddef>
 	"CDisplayObject.h"
 	<math.h>
 	<iostream>
 
-1378076407 c:\sources\igdc99\engine\cdisplayobject.h
+1378120791 c:\sources\igdc99\engine\cdisplayobject.h
 	<vector>
 	<SDL_rect.h>
+	<SDL_keyboard.h>
 
-1378077873 source:c:\sources\igdc99\engine\cimage.cpp
+1378123652 source:c:\sources\igdc99\engine\cimage.cpp
 	"CImage.h"
 	"CApplication.h"
 	"CImageLoader.h"
 	<iostream>
 
-1378077395 c:\sources\igdc99\engine\cimage.h
+1378123628 c:\sources\igdc99\engine\cimage.h
 	"CDisplayObject.h"
 	<SDL.h>
 
@@ -52,14 +54,48 @@
 	<SDL_image.h>
 	<map>
 
-1378078171 source:c:\sources\igdc99\game\cgameroot.cpp
+1378129550 source:c:\sources\igdc99\game\cgameroot.cpp
 	"CGameRoot.h"
 	"../engine/CApplication.h"
 	"../engine/CImage.h"
 	"../engine/CImageLoader.h"
+	"CIntro.h"
 	<iostream>
+	<malloc.h>
+	<time.h>
 
-1378076367 c:\sources\igdc99\game\cgameroot.h
+1378128549 c:\sources\igdc99\game\cgameroot.h
 	"../engine/CDisplayObject.h"
 	"../engine/CImage.h"
+
+1378119136 c:\sources\igdc99\engine\cinput.h
+	<map>
+	<SDL_keyboard.h>
+
+1378119047 source:c:\sources\igdc99\engine\cinput.cpp
+	"CInput.h"
+
+1378122566 source:c:\sources\igdc99\engine\csprite.cpp
+	"CSprite.h"
+
+1378123700 c:\sources\igdc99\engine\csprite.h
+	"CDisplayObject.h"
+	<SDL_render.h>
+
+1378128039 source:c:\sources\igdc99\game\cmainmenu.cpp
+	"CMainMenu.h"
+
+1378128039 c:\sources\igdc99\game\cmainmenu.h
+	"../engine/CDisplayObject.h"
+
+1378129695 c:\sources\igdc99\game\cintro.h
+	"../engine/CDisplayObject.h"
+
+1378129958 source:c:\sources\igdc99\game\cintro.cpp
+	"CIntro.h"
+	"../engine/CImage.h"
+	"../engine/CImageLoader.h"
+	"../engine/CApplication.h"
+	"CMainMenu.h"
+	"CGameRoot.h"
 

@@ -11,7 +11,7 @@ CApplication * CApplication::instance = NULL;
  * Constructor
  *
  */
-CApplication::CApplication(char * title, int screenWidth, int screenHeight)
+CApplication::CApplication(char * title, int screenWidth, int screenHeight, int sceneWidth, int sceneHeight)
 {
     SDL_Init(SDL_INIT_EVERYTHING);
     window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
@@ -25,8 +25,17 @@ CApplication::CApplication(char * title, int screenWidth, int screenHeight)
 
     if(renderer != NULL)
     {
-        this->displayWidth = screenWidth;
-        this->displayHeight = screenHeight;
+        if((sceneWidth != -1)&&(sceneHeight != -1))
+        {
+            SDL_RenderSetLogicalSize(renderer, sceneWidth, sceneHeight);
+            this->displayWidth = sceneWidth;
+            this->displayHeight = sceneHeight;
+        }
+        else
+        {
+            this->displayWidth = screenWidth;
+            this->displayHeight = screenHeight;
+        }
 
         SDL_SetRenderDrawColor(renderer, 0x64, 0x95, 0xed, 0xff);
 
@@ -73,6 +82,12 @@ void CApplication::Run()
         {
         case SDL_QUIT:
             running = false;
+            break;
+        case SDL_KEYDOWN:
+            input.onKeyDown(event.key.keysym.sym);
+            break;
+        case SDL_KEYUP:
+            input.onKeyUp(event.key.keysym.sym);
             break;
         }
 

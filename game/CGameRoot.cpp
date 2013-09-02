@@ -4,24 +4,36 @@
 #include "../engine/CImage.h"
 #include "../engine/CImageLoader.h"
 
+#include "CIntro.h"
+
 #include <iostream>
+#include <malloc.h>
+#include <time.h>
 
 using namespace std;
 
 CGameRoot::CGameRoot()
 {
-    image = new CImage(CImageLoader::getImage("data/gfx/helloworld.png"));
-    image->y = (CApplication::instance->displayHeight - image->h)/2;
-    addChild(image);
+    instance = this;
+
+    CIntro * intro = new CIntro();
+    setState(intro);
 }
 
 CGameRoot::~CGameRoot()
 {
 }
 
-void CGameRoot::update(unsigned int deltaTime)
+void CGameRoot::setState(CDisplayObject* newState)
 {
-    image->x += 0.3f;
-    image->rotation += 5.f;
-    CDisplayObject::update(deltaTime);
+    if(currentState != NULL){
+        removeChild(currentState);
+    }
+
+    currentState = newState;
+
+    addChild(currentState);
 }
+
+CGameRoot * CGameRoot::instance = NULL;
+
