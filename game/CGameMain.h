@@ -3,7 +3,7 @@
 
 #include "../engine/CDisplayObject.h"
 #include "CGameBg.h"
-#include "CFaith.h"
+#include "CCity.h"
 
 class CGameMain : public CDisplayObject
 {
@@ -11,11 +11,10 @@ class CGameMain : public CDisplayObject
         CGameMain();
         virtual ~CGameMain();
         void update(unsigned int deltaTime);
-        void render(SDL_Renderer * renderer);
     protected:
     private:
         CGameBg * background;
-        CFaith * faith;
+        CCity * city;
 };
 
 #endif // CGAMEMAIN_H

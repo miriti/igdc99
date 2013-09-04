@@ -3,22 +3,27 @@
 
 #include "../engine/CMovieClip.h"
 
+#include "CHitbox.h"
+
 class CFaith: public CMovieClip
 {
     public:
         CFaith();
         virtual ~CFaith();
         void update(unsigned int deltaTime);
-
-        float speed;
+        float speed_x;
+        float speed_y;
 
         void animStill();
         void animRun();
         void animJump();
         void animSlide();
+
+        CHitbox * hitbox;
     protected:
     private:
-        int currentAnimation = -1;
+        int currentAnimation;
+        bool in_jump;
 };
 
 #endif // CFAITH_H

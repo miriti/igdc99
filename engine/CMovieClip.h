@@ -14,8 +14,8 @@ class CMovieClip: public CDisplayObject
         void render(SDL_Renderer * renderer);
         void update(unsigned int deltaTime);
         void setFrame(int num);
-        int frameRate = 24;
-        bool flipHorisontal = false;
+        int frameRate;
+        bool flipHorisontal;
     protected:
         int totalFrames;
         int frameWidth;
@@ -25,7 +25,7 @@ class CMovieClip: public CDisplayObject
         int frameMax;
         SDL_Rect frameRect;
     private:
-        unsigned int frameTime = 0;
+        unsigned int frameTime;
         SDL_Surface * surface;
         SDL_Texture * texture;
 };

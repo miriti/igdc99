@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1378120956 source:c:\sources\igdc99\main.cpp
+1378249543 source:c:\sources\igdc99\main.cpp
 	<cstddef>
 	"engine/CApplication.h"
 	"game/CGameRoot.h"
 
-1378162072 source:c:\sources\igdc99\engine\capplication.cpp
+1378255090 source:c:\sources\igdc99\engine\capplication.cpp
 	"CApplication.h"
 	"CLog.h"
 	<iostream>
@@ -21,19 +21,21 @@
 	<iostream>
 	<stdio.h>
 
-1378161985 source:c:\sources\igdc99\engine\cdisplayobject.cpp
+1378248298 source:c:\sources\igdc99\engine\cdisplayobject.cpp
 	<cstddef>
 	"CDisplayObject.h"
+	"CApplication.h"
 	<math.h>
 	<iostream>
 
-1378162087 c:\sources\igdc99\engine\cdisplayobject.h
+1378248206 c:\sources\igdc99\engine\cdisplayobject.h
 	<vector>
 	<SDL_render.h>
 	<SDL_rect.h>
 	<SDL_keyboard.h>
+	"CInput.h"
 
-1378162239 source:c:\sources\igdc99\engine\cimage.cpp
+1378247232 source:c:\sources\igdc99\engine\cimage.cpp
 	"CImage.h"
 	"CImageLoader.h"
 	<iostream>
@@ -100,36 +102,64 @@
 	"CGameMain.h"
 	"CGameRoot.h"
 
-1378160135 source:c:\sources\igdc99\game\cgamebg.cpp
+1378249265 source:c:\sources\igdc99\game\cgamebg.cpp
 	"CGameBg.h"
 	"../engine/CImageLoader.h"
 	<math.h>
 	<iostream>
 
-1378158842 c:\sources\igdc99\game\cgamebg.h
+1378249290 c:\sources\igdc99\game\cgamebg.h
 	"../engine/CDisplayObject.h"
 	"../engine/CImage.h"
 
-1378162202 c:\sources\igdc99\game\cgamemain.h
+1378248384 c:\sources\igdc99\game\cgamemain.h
 	"../engine/CDisplayObject.h"
 	"CGameBg.h"
-	"CFaith.h"
+	"CCity.h"
 
-1378163630 source:c:\sources\igdc99\game\cgamemain.cpp
+1378254334 source:c:\sources\igdc99\game\cgamemain.cpp
 	"CGameMain.h"
 	"../engine/CApplication.h"
+	<iostream>
 
-1378164024 source:c:\sources\igdc99\engine\cmovieclip.cpp
+1378255186 source:c:\sources\igdc99\engine\cmovieclip.cpp
 	"CMovieClip.h"
 	"CImageLoader.h"
 
-1378163975 c:\sources\igdc99\engine\cmovieclip.h
+1378245475 c:\sources\igdc99\engine\cmovieclip.h
 	"CDisplayObject.h"
 
-1378164173 source:c:\sources\igdc99\game\cfaith.cpp
+1378255899 source:c:\sources\igdc99\game\cfaith.cpp
 	"CFaith.h"
 	"../engine/CApplication.h"
 
-1378164186 c:\sources\igdc99\game\cfaith.h
+1378254750 c:\sources\igdc99\game\cfaith.h
 	"../engine/CMovieClip.h"
+	"CHitbox.h"
+
+1378255358 source:c:\sources\igdc99\game\cbuilding.cpp
+	"CBuilding.h"
+	"../engine/CImageLoader.h"
+
+1378255367 c:\sources\igdc99\game\cbuilding.h
+	"../engine/CDisplayObject.h"
+	"../engine/CImage.h"
+	"CHitbox.h"
+
+1378255344 source:c:\sources\igdc99\game\ccity.cpp
+	"CCity.h"
+
+1378253856 c:\sources\igdc99\game\ccity.h
+	<vector>
+	"../engine/CDisplayObject.h"
+	"CBuilding.h"
+	"CFaith.h"
+
+1378254299 c:\sources\igdc99\game\chitbox.h
+	<vector>
+
+1378256416 source:c:\sources\igdc99\game\chitbox.cpp
+	"CHitbox.h"
+	<iostream>
+	<stdlib.h>
 

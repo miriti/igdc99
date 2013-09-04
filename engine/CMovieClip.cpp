@@ -8,7 +8,7 @@ CMovieClip::CMovieClip(char* path, int newFrameWidth, int newFrameHeight)
     texture = CImageLoader::getTextureFromSurface(surface);
     w = newFrameWidth;
     h = newFrameHeight;
-    x = y = 0;
+    frameRect.x = frameRect.y = x = y = 0;
 
     frameRect.w = frameWidth = newFrameWidth;
     frameRect.h = frameHeight = newFrameHeight;

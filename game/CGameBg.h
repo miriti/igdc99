@@ -9,7 +9,7 @@ class CGameBg: public CDisplayObject
     public:
         CGameBg();
         virtual ~CGameBg();
-        void parallax(int delta);
+        void parallax(float delta);
     protected:
     private:
         float d_layer0;

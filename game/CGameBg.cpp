@@ -33,10 +33,10 @@ CGameBg::~CGameBg()
     //dtor
 }
 
-void CGameBg::parallax(int delta)
+void CGameBg::parallax(float delta)
 {
-    d_layer0 += delta / 7.f;
-    d_layer1 += delta / 2.5f;
+    d_layer0 += delta / 10.f;
+    d_layer1 += delta / 5.f;
 
     if(d_layer0 < -160)
     {

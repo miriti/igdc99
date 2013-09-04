@@ -2,15 +2,17 @@
 
 #include "../engine/CApplication.h"
 
+#include <iostream>
+
+using namespace std;
+
 CGameMain::CGameMain()
 {
     background = new CGameBg();
     addChild(background);
 
-    faith = new CFaith();
-    faith->x = (160 - faith->w)/2;
-    faith->y = (120 - faith->h)/2;
-    addChild(faith);
+    city = new CCity();
+    addChild(city);
 }
 
 CGameMain::~CGameMain()
@@ -20,12 +22,10 @@ CGameMain::~CGameMain()
 
 void CGameMain::update(unsigned int deltaTime)
 {
-    background->parallax(-faith->speed);
+    city->x = 80-city->faith->x;
+    city->y = 60-city->faith->y;
+
+    background->parallax(-city->faith->speed_x);
 
     CDisplayObject::update(deltaTime);
-}
-
-void CGameMain::render(SDL_Renderer * renderer)
-{
-    CDisplayObject::render(renderer);
 }

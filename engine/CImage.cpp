@@ -28,7 +28,7 @@ CImage::~CImage()
 void CImage::render(SDL_Renderer * renderer)
 {
     SDL_RendererFlip flip = SDL_FLIP_NONE;
-    SDL_RenderCopyEx(renderer, this->texture, NULL, &rect, this->rotation, NULL, flip);
+    SDL_RenderCopyEx(renderer, this->texture, NULL, &this->rect, this->rotation, NULL, flip);
 }
 
 SDL_Surface* CImage::getSurface()
