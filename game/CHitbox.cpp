@@ -1,13 +1,16 @@
 #include "CHitbox.h"
 
 #include <iostream>
-#include <stdlib.h>
+#include <math.h>
 
-CHitbox::CHitbox(float nx, float ny, float nw, float nh, bool dynamic)
+using namespace std;
+
+CHitbox::CHitbox(double nx, double ny, double nw, double nh, CDisplayObject* depender)
 {
     updatePosition(nx, ny);
     updateSize(nw, nh);
     collision = false;
+    _depender = depender;
 }
 
 CHitbox::~CHitbox()
@@ -23,13 +26,13 @@ void CHitbox::solve()
     }
 }
 
-void CHitbox::updatePosition(float nx, float ny)
+void CHitbox::updatePosition(double nx, double ny)
 {
     x = nx;
     y = ny;
 }
 
-void CHitbox::updateSize(float nw, float nh)
+void CHitbox::updateSize(double nw, double nh)
 {
     w = nw;
     h = nh;
@@ -41,29 +44,37 @@ void CHitbox::updateSize(float nw, float nh)
 
 void CHitbox::test(CHitbox* against)
 {
-    float _cx = x - against->x;
-    float _cy = y - against->y;
-    float wSum = halfW + against->halfW;
-    float hSum = halfH + against->halfH;
+    double _cx = x - against->x;
+    double _cy = y - against->y;
+    double wSum = halfW + against->halfW;
+    double hSum = halfH + against->halfH;
 
-    if((abs(_cx) < wSum) && (abs(_cy) < hSum))
+    if((fabs(_cx) < wSum) && (fabs(_cy) < hSum))
     {
         if(children.size() == 0)
         {
             collision = true;
 
-            float _dx = wSum - abs(_cx);
-            float _dy = hSum - abs(_cy);
+            double _dx = wSum - fabs(_cx);
+            double _dy = hSum - fabs(_cy);
 
             if(_dx < _dy)
             {
-                dx = _dx * (_cx < 0 ? -1 : 1);
+                dx = _dx * (_cx < 0 ? -1.f : 1.f);
                 dy = 0;
+                cout << "wSum: " << wSum << "\t_dx: " << _dx << "\t_cx: " <<  _cx << "\tdx: " << dx << endl;
             }
             else
             {
                 dx = 0;
-                dy = _dy * (_cy < 0 ? -1 : 1);
+                dy = _dy * (_cy < 0 ? -1.f : 1.f);
+            }
+
+            if(_depender != NULL)
+            {
+                _depender->x += dx;
+                _depender->y += dy;
+                updatePosition(_depender->x, _depender->y);
             }
         }
         else
@@ -78,22 +89,22 @@ void CHitbox::addChild(CHitbox* child)
     children.push_back(child);
 }
 
-float CHitbox::left()
+double CHitbox::left()
 {
     return x - halfW;
 }
 
-float CHitbox::right()
+double CHitbox::right()
 {
     return x + halfW;
 }
 
-float CHitbox::top()
+double CHitbox::top()
 {
     return y - halfH;
 }
 
-float CHitbox::bottom()
+double CHitbox::bottom()
 {
     return y + halfH;
 }

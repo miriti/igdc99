@@ -22,7 +22,7 @@ CGameMain::~CGameMain()
 
 void CGameMain::update(unsigned int deltaTime)
 {
-    city->x = 80-city->faith->x;
+    city->x = 20-city->faith->x;
     city->y = 60-city->faith->y;
 
     background->parallax(-city->faith->speed_x);

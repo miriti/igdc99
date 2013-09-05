@@ -3,27 +3,30 @@
 
 #include <vector>
 
+#include "../engine/CDisplayObject.h"
+
 using namespace std;
 
 class CHitbox
 {
     public:
-        CHitbox(float nx, float ny, float nw, float nh, bool dynamic = false);
+        CHitbox(double nx, double ny, double nw, double nh, CDisplayObject* depender = NULL);
         virtual ~CHitbox();
-        float x, y, w, h, dx, dy, halfW, halfH;
+        double x, y, w, h, dx, dy, halfW, halfH;
         bool collision;
         void solve();
-        void updatePosition(float nx, float ny);
-        void updateSize(float nw, float nh);
+        void updatePosition(double nx, double ny);
+        void updateSize(double nw, double nh);
         void test(CHitbox * against);
         void addChild(CHitbox * child);
 
-        float left();
-        float right();
-        float top();
-        float bottom();
+        double left();
+        double right();
+        double top();
+        double bottom();
     protected:
         vector<CHitbox*> children;
+        CDisplayObject* _depender;
     private:
 };
 

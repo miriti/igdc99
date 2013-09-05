@@ -117,7 +117,7 @@
 	"CGameBg.h"
 	"CCity.h"
 
-1378254334 source:c:\sources\igdc99\game\cgamemain.cpp
+1378298936 source:c:\sources\igdc99\game\cgamemain.cpp
 	"CGameMain.h"
 	"../engine/CApplication.h"
 	<iostream>
@@ -129,9 +129,11 @@
 1378245475 c:\sources\igdc99\engine\cmovieclip.h
 	"CDisplayObject.h"
 
-1378255899 source:c:\sources\igdc99\game\cfaith.cpp
+1378328843 source:c:\sources\igdc99\game\cfaith.cpp
 	"CFaith.h"
+	"CCity.h"
 	"../engine/CApplication.h"
+	<iostream>
 
 1378254750 c:\sources\igdc99\game\cfaith.h
 	"../engine/CMovieClip.h"
@@ -146,20 +148,22 @@
 	"../engine/CImage.h"
 	"CHitbox.h"
 
-1378255344 source:c:\sources\igdc99\game\ccity.cpp
+1378307506 source:c:\sources\igdc99\game\ccity.cpp
 	"CCity.h"
+	<time.h>
 
-1378253856 c:\sources\igdc99\game\ccity.h
+1378297541 c:\sources\igdc99\game\ccity.h
 	<vector>
 	"../engine/CDisplayObject.h"
 	"CBuilding.h"
 	"CFaith.h"
 
-1378254299 c:\sources\igdc99\game\chitbox.h
+1378329770 c:\sources\igdc99\game\chitbox.h
 	<vector>
+	"../engine/CDisplayObject.h"
 
-1378256416 source:c:\sources\igdc99\game\chitbox.cpp
+1378339760 source:c:\sources\igdc99\game\chitbox.cpp
 	"CHitbox.h"
 	<iostream>
-	<stdlib.h>
+	<math.h>
 

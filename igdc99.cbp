@@ -44,8 +44,28 @@
 		<Unit filename="engine/CInput.h" />
 		<Unit filename="engine/CLog.cpp" />
 		<Unit filename="engine/CLog.h" />
+		<Unit filename="engine/CMovieClip.cpp" />
+		<Unit filename="engine/CMovieClip.h" />
+		<Unit filename="engine/CSprite.cpp" />
+		<Unit filename="engine/CSprite.h" />
+		<Unit filename="game/CBuilding.cpp" />
+		<Unit filename="game/CBuilding.h" />
+		<Unit filename="game/CCity.cpp" />
+		<Unit filename="game/CCity.h" />
+		<Unit filename="game/CFaith.cpp" />
+		<Unit filename="game/CFaith.h" />
+		<Unit filename="game/CGameBg.cpp" />
+		<Unit filename="game/CGameBg.h" />
+		<Unit filename="game/CGameMain.cpp" />
+		<Unit filename="game/CGameMain.h" />
 		<Unit filename="game/CGameRoot.cpp" />
 		<Unit filename="game/CGameRoot.h" />
+		<Unit filename="game/CHitbox.cpp" />
+		<Unit filename="game/CHitbox.h" />
+		<Unit filename="game/CIntro.cpp" />
+		<Unit filename="game/CIntro.h" />
+		<Unit filename="game/CMainMenu.cpp" />
+		<Unit filename="game/CMainMenu.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<DoxyBlocks>

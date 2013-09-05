@@ -2,11 +2,19 @@
 
 #define CITY_GROUND_LEVEL 300
 
+#include <time.h>
+
 CCity::CCity()
 {
-    CBuilding * testBuilding = new CBuilding(5, 20);
     next_building_x = 0;
-    addBuilding(testBuilding);
+
+    srand(time(NULL));
+
+    for(int i=0; i<10; i++)
+    {
+        CBuilding * testBuilding = new CBuilding(2 + rand() % 13, 1 + rand() % 20);
+        addBuilding(testBuilding);
+    }
 
     faith = new CFaith();
     addChild(faith);
@@ -27,13 +35,14 @@ void CCity::addBuilding(CBuilding* building)
     addChild(building);
 
     buildings.push_back(building);
+
+    next_building_x += building->w;
 }
 
-void CCity::update(unsigned int deltaTime)
+void CCity::testCollisions(CHitbox* hitbox)
 {
-    CDisplayObject::update(deltaTime);
-
-    for(int i=0; i<buildings.size(); i++){
-        faith->hitbox->test(buildings[i]->hitbox);
+    for(int i=0; i<buildings.size(); i++)
+    {
+        hitbox->test(buildings[i]->hitbox);
     }
 }

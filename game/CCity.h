@@ -16,7 +16,7 @@ class CCity: public CDisplayObject
         CCity();
         virtual ~CCity();
         void addBuilding(CBuilding* building);
-        void update(unsigned int deltaTime);
+        void testCollisions(CHitbox* hitbox);
         CFaith* faith;
     protected:
     private:
