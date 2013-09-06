@@ -10,9 +10,16 @@ CCity::CCity()
 
     srand(time(NULL));
 
+    CBuilding * firstBuilding = new CBuilding(30, 15);
+
+    addBuilding(firstBuilding);
+
+    int nexHait = 15 + (-2 + rand() % 4);
+
     for(int i=0; i<10; i++)
     {
-        CBuilding * testBuilding = new CBuilding(2 + rand() % 13, 1 + rand() % 20);
+        CBuilding * testBuilding = new CBuilding(2 + rand() % 13, nexHait);
+        nexHait += (-2 + rand() % 4);
         addBuilding(testBuilding);
     }
 
@@ -36,7 +43,7 @@ void CCity::addBuilding(CBuilding* building)
 
     buildings.push_back(building);
 
-    next_building_x += building->w;
+    next_building_x += building->w + 30;
 }
 
 void CCity::testCollisions(CHitbox* hitbox)

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1378249543 source:c:\sources\igdc99\main.cpp
+1378425384 source:c:\sources\igdc99\main.cpp
 	<cstddef>
 	"engine/CApplication.h"
 	"game/CGameRoot.h"
@@ -44,7 +44,7 @@
 	"CDisplayObject.h"
 	<SDL.h>
 
-1378068809 source:c:\sources\igdc99\engine\cimageloader.cpp
+1378426716 source:c:\sources\igdc99\engine\cimageloader.cpp
 	"CImageLoader.h"
 	"CApplication.h"
 	<iostream>
@@ -102,8 +102,9 @@
 	"CGameMain.h"
 	"CGameRoot.h"
 
-1378249265 source:c:\sources\igdc99\game\cgamebg.cpp
+1378426898 source:c:\sources\igdc99\game\cgamebg.cpp
 	"CGameBg.h"
+	"../engine/CApplication.h"
 	"../engine/CImageLoader.h"
 	<math.h>
 	<iostream>
@@ -117,7 +118,7 @@
 	"CGameBg.h"
 	"CCity.h"
 
-1378298936 source:c:\sources\igdc99\game\cgamemain.cpp
+1378427408 source:c:\sources\igdc99\game\cgamemain.cpp
 	"CGameMain.h"
 	"../engine/CApplication.h"
 	<iostream>
@@ -129,7 +130,7 @@
 1378245475 c:\sources\igdc99\engine\cmovieclip.h
 	"CDisplayObject.h"
 
-1378328843 source:c:\sources\igdc99\game\cfaith.cpp
+1378428435 source:c:\sources\igdc99\game\cfaith.cpp
 	"CFaith.h"
 	"CCity.h"
 	"../engine/CApplication.h"
@@ -148,7 +149,7 @@
 	"../engine/CImage.h"
 	"CHitbox.h"
 
-1378307506 source:c:\sources\igdc99\game\ccity.cpp
+1378427733 source:c:\sources\igdc99\game\ccity.cpp
 	"CCity.h"
 	<time.h>
 

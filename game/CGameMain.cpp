@@ -17,13 +17,12 @@ CGameMain::CGameMain()
 
 CGameMain::~CGameMain()
 {
-    //dtor
 }
 
 void CGameMain::update(unsigned int deltaTime)
 {
-    city->x = 20-city->faith->x;
-    city->y = 60-city->faith->y;
+    city->x = (CApplication::instance->displayWidth / 8) - city->faith->x;
+    city->y = (CApplication::instance->displayHeight / 2) - city->faith->y;
 
     background->parallax(-city->faith->speed_x);
 

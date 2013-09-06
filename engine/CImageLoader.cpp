@@ -14,6 +14,7 @@ SDL_Surface* CImageLoader::getImage(char* path)
     }
     else
     {
+        cout << "Loading surface from: " << path << endl;
         SDL_Surface * newSurface =IMG_Load(path);
 
         if(newSurface != NULL)
