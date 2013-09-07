@@ -9,11 +9,13 @@ class CGameBg: public CDisplayObject
     public:
         CGameBg();
         virtual ~CGameBg();
-        void parallax(float delta);
+        void parallax(float delta_x, float delta_y);
     protected:
     private:
         float d_layer0;
         float d_layer1;
+        float y_layer0;
+        float y_layer1;
         CImage * sky;
         CImage * buildings0[2];
         CImage * buildings1[2];

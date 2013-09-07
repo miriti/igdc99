@@ -21,14 +21,14 @@
 	<iostream>
 	<stdio.h>
 
-1378248298 source:c:\sources\igdc99\engine\cdisplayobject.cpp
+1378585293 source:c:\sources\igdc99\engine\cdisplayobject.cpp
 	<cstddef>
 	"CDisplayObject.h"
 	"CApplication.h"
 	<math.h>
 	<iostream>
 
-1378248206 c:\sources\igdc99\engine\cdisplayobject.h
+1378584637 c:\sources\igdc99\engine\cdisplayobject.h
 	<vector>
 	<SDL_render.h>
 	<SDL_rect.h>
@@ -56,7 +56,7 @@
 	<SDL_image.h>
 	<map>
 
-1378129550 source:c:\sources\igdc99\game\cgameroot.cpp
+1378585381 source:c:\sources\igdc99\game\cgameroot.cpp
 	"CGameRoot.h"
 	"../engine/CApplication.h"
 	"../engine/CImage.h"
@@ -66,7 +66,7 @@
 	<malloc.h>
 	<time.h>
 
-1378128549 c:\sources\igdc99\game\cgameroot.h
+1378585370 c:\sources\igdc99\game\cgameroot.h
 	"../engine/CDisplayObject.h"
 	"../engine/CImage.h"
 
@@ -102,14 +102,14 @@
 	"CGameMain.h"
 	"CGameRoot.h"
 
-1378426898 source:c:\sources\igdc99\game\cgamebg.cpp
+1378592763 source:c:\sources\igdc99\game\cgamebg.cpp
 	"CGameBg.h"
 	"../engine/CApplication.h"
 	"../engine/CImageLoader.h"
 	<math.h>
 	<iostream>
 
-1378249290 c:\sources\igdc99\game\cgamebg.h
+1378592495 c:\sources\igdc99\game\cgamebg.h
 	"../engine/CDisplayObject.h"
 	"../engine/CImage.h"
 
@@ -118,7 +118,7 @@
 	"CGameBg.h"
 	"CCity.h"
 
-1378427408 source:c:\sources\igdc99\game\cgamemain.cpp
+1378592631 source:c:\sources\igdc99\game\cgamemain.cpp
 	"CGameMain.h"
 	"../engine/CApplication.h"
 	<iostream>
@@ -130,9 +130,11 @@
 1378245475 c:\sources\igdc99\engine\cmovieclip.h
 	"CDisplayObject.h"
 
-1378428435 source:c:\sources\igdc99\game\cfaith.cpp
+1378592686 source:c:\sources\igdc99\game\cfaith.cpp
 	"CFaith.h"
 	"CCity.h"
+	"CGameMain.h"
+	"CGameRoot.h"
 	"../engine/CApplication.h"
 	<iostream>
 
@@ -140,20 +142,22 @@
 	"../engine/CMovieClip.h"
 	"CHitbox.h"
 
-1378255358 source:c:\sources\igdc99\game\cbuilding.cpp
+1378585154 source:c:\sources\igdc99\game\cbuilding.cpp
 	"CBuilding.h"
 	"../engine/CImageLoader.h"
 
-1378255367 c:\sources\igdc99\game\cbuilding.h
+1378585074 c:\sources\igdc99\game\cbuilding.h
 	"../engine/CDisplayObject.h"
 	"../engine/CImage.h"
 	"CHitbox.h"
 
-1378427733 source:c:\sources\igdc99\game\ccity.cpp
+1378592401 source:c:\sources\igdc99\game\ccity.cpp
 	"CCity.h"
 	<time.h>
+	<iostream>
+	"../engine/CApplication.h"
 
-1378297541 c:\sources\igdc99\game\ccity.h
+1378591172 c:\sources\igdc99\game\ccity.h
 	<vector>
 	"../engine/CDisplayObject.h"
 	"CBuilding.h"

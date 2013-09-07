@@ -27,6 +27,7 @@ class CDisplayObject
         float w;
         float h;
         float rotation;
+        bool kill;
     protected:
         SDL_Rect rect;
         CDisplayObject* parent;

@@ -11,6 +11,7 @@ CDisplayObject::CDisplayObject()
 {
     rect.w = rect.h = rect.x = rect.y = 0;
     x = y = w = h = rotation = 0;
+    kill = false;
 }
 
 CDisplayObject::~CDisplayObject()
@@ -79,9 +80,21 @@ void CDisplayObject::update(unsigned int deltaTime)
     rect.x = floor(globalX());
     rect.y = floor(globalY());
 
-    for(unsigned int i=0; i<children.size(); i++)
+    if(children.size()>0)
     {
-        children[i]->update(deltaTime);
+        for(int i=children.size()-1; i>=0; i--)
+        {
+            if(children[i]->kill)
+            {
+                CDisplayObject * eraceObject = children[i];
+                children.erase(children.begin()+i);
+                delete eraceObject;
+            }
+            else
+            {
+                children[i]->update(deltaTime);
+            }
+        }
     }
 }
 

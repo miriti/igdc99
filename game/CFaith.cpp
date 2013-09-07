@@ -1,14 +1,16 @@
 #include "CFaith.h"
 #include "CCity.h"
+#include "CGameMain.h"
+#include "CGameRoot.h"
 
 #include "../engine/CApplication.h"
 
 #include <iostream>
 
-#define FAITH_MAX_SPEED     3.f
-#define FAITH_GRAVITY       0.075f
-#define FAITH_JUMP_POWER    3.f
-#define FAITH_ACCELERATION  0.01f
+#define FAITH_MAX_SPEED     5.f
+#define FAITH_GRAVITY       0.15f
+#define FAITH_JUMP_POWER    3.5f
+#define FAITH_ACCELERATION  0.005f
 
 CFaith::CFaith(): CMovieClip("data/gfx/sprites/faith/faith_anim.png", 32, 32)
 {
@@ -26,6 +28,13 @@ CFaith::~CFaith()
 
 void CFaith::update(unsigned int deltaTime)
 {
+    if(y > CITY_GROUND_LEVEL)
+    {
+        CGameMain * newGameMain = new CGameMain();
+        CGameRoot::instance->setState(newGameMain, false);
+        return;
+    }
+
     if((getInput()->isUp()) || (getInput()->isKeyDown(SDLK_x)))
     {
         if(!in_jump)
@@ -38,8 +47,10 @@ void CFaith::update(unsigned int deltaTime)
 
     speed_y += FAITH_GRAVITY;
 
-    if(speed_x < FAITH_MAX_SPEED){
-        speed_x += FAITH_ACCELERATION;
+    if(speed_x < FAITH_MAX_SPEED)
+    {
+        if(!in_jump)
+            speed_x += FAITH_ACCELERATION;
     }
 
 
@@ -48,7 +59,6 @@ void CFaith::update(unsigned int deltaTime)
         if(!in_jump)
         {
             frameRate = 5 + abs(speed_x) * 5;
-
             flipHorisontal = (speed_x < 0);
         }
     }
@@ -78,6 +88,8 @@ void CFaith::update(unsigned int deltaTime)
         }
 
         hitbox->solve();
+    }else{
+        in_jump = true;
     }
 
     CMovieClip::update(deltaTime);

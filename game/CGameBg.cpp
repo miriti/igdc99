@@ -27,17 +27,21 @@ CGameBg::CGameBg()
 
     addChild(buildings1[0]);
     addChild(buildings1[1]);
+
+    d_layer0 = d_layer1 = y_layer0 = y_layer1 = 0.f;
 }
 
 CGameBg::~CGameBg()
 {
-    //dtor
 }
 
-void CGameBg::parallax(float delta)
+void CGameBg::parallax(float delta_x, float delta_y)
 {
-    d_layer0 += delta / 10.f;
-    d_layer1 += delta / 5.f;
+    d_layer0 += delta_x / 20.f;
+    d_layer1 += delta_x / 10.f;
+
+    y_layer0 += delta_y / 20.f;
+    y_layer1 += delta_y / 10.f;
 
     if(d_layer0 < -CApplication::instance->displayWidth)
     {
@@ -64,4 +68,7 @@ void CGameBg::parallax(float delta)
 
     buildings1[0]->x = floor(d_layer1);
     buildings1[1]->x = CApplication::instance->displayWidth + floor(d_layer1);
+
+    buildings0[0]->y = buildings0[1]->y = y_layer0;
+    buildings1[0]->y = buildings1[1]->y = y_layer1;
 }

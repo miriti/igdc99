@@ -11,6 +11,7 @@ class CBuilding: public CDisplayObject
     public:
         CBuilding(int wSections, int hSections);
         virtual ~CBuilding();
+        void update(unsigned int deltaTime);
         void added();
         CHitbox * hitbox;
     protected:

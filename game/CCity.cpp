@@ -1,8 +1,11 @@
 #include "CCity.h"
 
-#define CITY_GROUND_LEVEL 300
-
 #include <time.h>
+#include <iostream>
+
+#include "../engine/CApplication.h"
+
+using namespace std;
 
 CCity::CCity()
 {
@@ -14,22 +17,34 @@ CCity::CCity()
 
     addBuilding(firstBuilding);
 
-    int nexHait = 15 + (-2 + rand() % 4);
-
-    for(int i=0; i<10; i++)
-    {
-        CBuilding * testBuilding = new CBuilding(2 + rand() % 13, nexHait);
-        nexHait += (-2 + rand() % 4);
-        addBuilding(testBuilding);
-    }
-
     faith = new CFaith();
+    faith->y = firstBuilding->y - faith->h;
+    faith->x = (CApplication::instance->displayWidth / 8);
     addChild(faith);
 }
 
 CCity::~CCity()
 {
-    //dtor
+}
+
+void CCity::update(unsigned int deltaTime)
+{
+    for(int i=buildings.size()-1; i>=0; i--)
+    {
+        if(x + (buildings[i]->x + buildings[i]->w) < 0)
+        {
+            buildings[i]->kill = true;
+            buildings.erase(buildings.begin()+i);
+        }
+    }
+
+    if(-x + CApplication::instance->displayWidth > next_building_x)
+    {
+        CBuilding * newBuilding = new CBuilding(3 + rand() % 17, nextHeight);
+        addBuilding(newBuilding);
+    }
+
+    CDisplayObject::update(deltaTime);
 }
 
 void CCity::addBuilding(CBuilding* building)
@@ -43,7 +58,9 @@ void CCity::addBuilding(CBuilding* building)
 
     buildings.push_back(building);
 
-    next_building_x += building->w + 30;
+    next_building_x += building->w + 60;
+
+    nextHeight = 15 + (-1 + rand() % 2);
 }
 
 void CCity::testCollisions(CHitbox* hitbox)

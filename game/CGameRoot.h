@@ -10,7 +10,7 @@ class CGameRoot : public CDisplayObject
         CGameRoot();
         virtual ~CGameRoot();
         static CGameRoot * instance;
-        void setState(CDisplayObject * newState);
+        void setState(CDisplayObject * newState, bool broot = false);
     private:
         CDisplayObject * currentState;
 };

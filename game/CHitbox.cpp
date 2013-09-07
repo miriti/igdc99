@@ -15,7 +15,6 @@ CHitbox::CHitbox(double nx, double ny, double nw, double nh, CDisplayObject* dep
 
 CHitbox::~CHitbox()
 {
-    //dtor
 }
 
 void CHitbox::solve()
@@ -62,7 +61,6 @@ void CHitbox::test(CHitbox* against)
             {
                 dx = _dx * (_cx < 0 ? -1.f : 1.f);
                 dy = 0;
-                cout << "wSum: " << wSum << "\t_dx: " << _dx << "\t_cx: " <<  _cx << "\tdx: " << dx << endl;
             }
             else
             {

@@ -27,6 +27,17 @@ CBuilding::CBuilding(int wSections, int hSections)
     hitbox = new CHitbox(0, 0, w, h);
 }
 
+void CBuilding::update(unsigned int deltaTime)
+{
+    CDisplayObject::update(deltaTime);
+
+    if(x+w < 0)
+    {
+        kill = true;
+    }
+}
+
+
 void CBuilding::added()
 {
     hitbox->updatePosition(x + (w/2), y + (h/2));

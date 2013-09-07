@@ -24,10 +24,10 @@ CGameRoot::~CGameRoot()
 {
 }
 
-void CGameRoot::setState(CDisplayObject* newState)
+void CGameRoot::setState(CDisplayObject* newState, bool broot)
 {
     if(currentState != NULL){
-        removeChild(currentState);
+        removeChild(currentState, broot);
     }
 
     currentState = newState;
