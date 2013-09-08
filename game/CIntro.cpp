@@ -23,7 +23,7 @@ CIntro::~CIntro()
 
 void CIntro::update(unsigned int deltaTime)
 {
-    if(timePassed >= 300)
+    if(timePassed >= 3000)
     {
         CGameMain * gameMain = new CGameMain();
         CGameRoot::instance->setState(gameMain);

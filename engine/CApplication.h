@@ -4,6 +4,7 @@
 #include <SDL.h>
 #include "CDisplayObject.h"
 #include "CInput.h"
+#include "CAudio.h"
 
 class CApplication: public CDisplayObject
 {

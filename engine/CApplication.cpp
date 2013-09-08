@@ -42,6 +42,8 @@ CApplication::CApplication(char * title, int screenWidth, int screenHeight, int 
         running = true;
     }
 
+    CAudio::Init();
+
     parent = NULL;
 
     CApplication::instance = this;

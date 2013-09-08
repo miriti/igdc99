@@ -6,11 +6,12 @@
 #include "../engine/CApplication.h"
 
 #include <iostream>
+#include <stdlib.h>
 
-#define FAITH_MAX_SPEED     5.f
+#define FAITH_MAX_SPEED     6.f
 #define FAITH_GRAVITY       0.15f
 #define FAITH_JUMP_POWER    3.5f
-#define FAITH_ACCELERATION  0.005f
+#define FAITH_ACCELERATION  0.003f
 
 CFaith::CFaith(): CMovieClip("data/gfx/sprites/faith/faith_anim.png", 32, 32)
 {
@@ -20,6 +21,12 @@ CFaith::CFaith(): CMovieClip("data/gfx/sprites/faith/faith_anim.png", 32, 32)
     speed_x = 2.f;
     speed_y = 0;
     hitbox = new CHitbox(0, 0, 8, 14, this);
+
+    snd_step = CAudio::loadSound("data/sound/sfx/step.wav", false);
+    snd_jump_0 = CAudio::loadSound("data/sound/sfx/jump_0.wav", false);
+    //snd_jump_1 = CAudio::loadSound("data/sound/sfx/jump_1.wav", false);
+
+    step_frame_count = 0;
 }
 
 CFaith::~CFaith()
@@ -41,6 +48,7 @@ void CFaith::update(unsigned int deltaTime)
         {
             in_jump = true;
             speed_y = -FAITH_JUMP_POWER;
+            CAudio::play(snd_jump_0);
             animJump();
         }
     }
@@ -94,6 +102,7 @@ void CFaith::update(unsigned int deltaTime)
 
     CMovieClip::update(deltaTime);
 }
+
 
 void CFaith::animStill()
 {
